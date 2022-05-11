@@ -15,6 +15,7 @@ public extension UITextField {
     /// A publisher emitting any text changes to a this text field.
     var textPublisher: AnyPublisher<String?, Never> {
         Publishers.ControlProperty(control: self, events: .defaultValueEvents, keyPath: \.text)
+            .debounce(for: 0.0, scheduler: DispatchQueue.main)
                   .eraseToAnyPublisher()
     }
 

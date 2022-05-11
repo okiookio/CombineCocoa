@@ -9,7 +9,7 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "CombineCocoa", dependencies: ["Runtime"]),
-        .target(name: "Runtime", dependencies: [])
+        .target(name: "CombineCocoa", dependencies: ["CombineCocoaRuntime"]),
+        .target(name: "CombineCocoaRuntime", dependencies: [])
     ]
 )
